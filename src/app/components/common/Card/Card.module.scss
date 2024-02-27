@@ -1,0 +1,42 @@
+@import "../../../../../mixins";
+
+.card__wrapper {
+  @include displayFlex(column, unset, unset, unset);
+  border: 1px solid #ccc;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: var(--component-bg);
+
+  .card__top {
+    @include displayFlex(row, center, space-between, unset);
+    border-bottom: 0.5px solid #ccc;
+  }
+
+  .card__middle {
+    @include displayFlex(row, center, space-between, unset);
+    margin: 1rem 0;
+
+    .center {
+      @include displayFlex(column, unset, unset, unset);
+      width: max-content;
+      margin: 0 auto;
+
+      .duration {
+        @include displayFlex(column, center, space-between, unset);
+        div {
+          @include displayFlex(row, center, center, 5px);
+          span {
+            height: 2px;
+            width: 100px;
+            background-color: #626971;
+          }
+          svg {
+            rotate: 90deg;
+          }
+        }
+      }
+    }
+  }
+}

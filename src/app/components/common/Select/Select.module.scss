@@ -1,0 +1,49 @@
+@import "../../../../../mixins";
+
+.select__tag__wrapper {
+  @include displayFlex(column, unset, center, 0.5rem);
+  position: relative;
+  label {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+
+  input {
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: 0.5px gray solid;
+    // border-bottom: 0px;
+  }
+
+  .drop_down_wrapper {
+    @include displayFlex(column, unset, center, 0.5rem);
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 95%;
+    background-color: white;
+    // border: 1px solid gray;
+    border-radius: 5px;
+    z-index: 10;
+    padding: 0.7rem;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.type__one__select {
+  input {
+    border-radius: 10px 0px 0px 10px;
+  }
+}
+
+.type__two__select {
+  input {
+    border-radius: 0px 10px 10px 0px;
+  }
+}

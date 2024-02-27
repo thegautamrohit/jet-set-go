@@ -1,13 +1,19 @@
+@import "../../../../mixins";
+
 .navbar__wrapper {
-  background-color: #05203c;
   color: #fff;
   padding: 2rem 4rem;
+  @include displayFlex(column, unset, unset, unset);
+
   h1 {
     font-size: var(--text-4xl);
     line-height: 1.8;
+    background-color: var(--nav-bg);
   }
 
   p {
     font-size: var(--text-2xl);
+    background-color: var(--nav-bg);
   }
+  background-color: var(--nav-bg);
 }
