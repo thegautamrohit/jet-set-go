@@ -3,20 +3,48 @@
 .card__wrapper {
   @include displayFlex(column, unset, unset, unset);
   border: 1px solid #ccc;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
-  padding: 2rem;
+  //   padding: 2rem;
   border-radius: 10px;
   background-color: var(--component-bg);
+  color: #fff;
 
   .card__top {
     @include displayFlex(row, center, space-between, unset);
     border-bottom: 0.5px solid #ccc;
+    background-color: var(--nav-bg);
+    padding: 0.8rem;
+    p:first-child {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+    }
+
+    p {
+      span {
+        font-weight: 600;
+      }
+    }
+    border-radius: 10px 10px 0 0;
   }
 
   .card__middle {
     @include displayFlex(row, center, space-between, unset);
     margin: 1rem 0;
+    padding: 0.8rem;
+    color: var(--regular-color);
+
+    .left,
+    .right {
+      p {
+        &:first-child {
+          font-size: 20px;
+          font-size: var(--text-2xl);
+          font-weight: 600;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
 
     .center {
       @include displayFlex(column, unset, unset, unset);
@@ -29,7 +57,7 @@
           @include displayFlex(row, center, center, 5px);
           span {
             height: 2px;
-            width: 100px;
+            width: 150px;
             background-color: #626971;
           }
           svg {
@@ -37,6 +65,29 @@
           }
         }
       }
+    }
+  }
+
+  .card__bottom {
+    @include displayFlex(row, center, space-between, unset);
+    background-color: var(--nav-bg);
+    padding: 0.8rem;
+    border-radius: 0 0 10px 10px;
+
+    p {
+      font-size: var(--text-lg);
+      font-weight: 500;
+      color: #fff;
+    }
+
+    button {
+      background-color: var(--component-bg);
+      border: 0px;
+      color: var(--nav-bg);
+      font-size: var(--text-lg);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
     }
   }
 }

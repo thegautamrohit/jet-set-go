@@ -47,7 +47,9 @@ function Card() {
     <div className={styles.card__wrapper}>
       <div className={styles.card__top}>
         <p>{data?.displayData?.airlines[0]?.airlineName}</p>
-        <p> {data?.displayData?.airlines[0]?.flightNumber} </p>
+        <p>
+          <span>Flight No:</span> {data?.displayData?.airlines[0]?.flightNumber}
+        </p>
       </div>
 
       <div className={styles.card__middle}>
@@ -59,8 +61,11 @@ function Card() {
           </p>
           <p> {data?.displayData?.source?.airport?.airportName} </p>
           <p> Terminal: {data?.displayData?.source?.airport?.terminal} </p>
-          <p> {data?.displayData?.source?.airport?.cityName} </p>
-          <p> {data?.displayData?.source?.airport?.countryName} </p>
+          <p>
+            {data?.displayData?.source?.airport?.cityName},{" "}
+            {data?.displayData?.source?.airport?.countryName}
+          </p>
+          <p> </p>
         </div>
 
         <div className={styles.center}>
@@ -83,13 +88,17 @@ function Card() {
           </p>
           <p> {data?.displayData?.destination?.airport?.airportName} </p>
           <p> Terminal: {data?.displayData?.destination?.airport?.terminal} </p>
-          <p> {data?.displayData?.destination?.airport?.cityName} </p>
-          <p> {data?.displayData?.destination?.airport?.countryName} </p>
+          <p>
+            {data?.displayData?.destination?.airport?.cityName},{" "}
+            {data?.displayData?.destination?.airport?.countryName}
+          </p>
+          <p> </p>
         </div>
       </div>
 
       <div className={styles.card__bottom}>
-        <p>{data?.fare}</p>
+        <p>Fare: ₹{data?.fare}</p>
+        <button>Book Now</button>
       </div>
     </div>
   );
