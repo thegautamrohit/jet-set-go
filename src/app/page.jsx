@@ -1,3 +1,5 @@
+"use-client";
+
 import React from "react";
 import FormFilter from "./components/FormFilter/FormFilter";
 import Card from "../app/components/common/Card/Card";
@@ -16,10 +18,9 @@ async function Page() {
   const flightData = await getData();
 
   return (
-    <div>
+    <>
       <FormFilter flightData={flightData} />
-      <Card />
-    </div>
+    </>
   );
 }
 

@@ -16,16 +16,14 @@
   }
 
   .drop_down_wrapper {
-    @include displayFlex(column, unset, center, 0.5rem);
+    // @include displayFlex(column, flex-start, center, 0.5rem);
     position: absolute;
     top: 120%;
     left: 0;
     width: 95%;
     background-color: white;
-    // border: 1px solid gray;
     border-radius: 5px;
     z-index: 10;
-    padding: 0.7rem;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     ul {
@@ -33,6 +31,10 @@
         list-style: none;
       }
     }
+
+    max-height: 200px;
+    overflow-y: scroll;
+    padding: 1rem;
   }
 }
 
