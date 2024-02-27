@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import { MdFlight } from "react-icons/md";
 
-function Select({ label, items, borderRadius }) {
+function Select({ label, items, borderRadius, setItems }) {
   const [input, setInput] = useState("");
   const [show, setShow] = useState(false);
 
@@ -18,6 +18,7 @@ function Select({ label, items, borderRadius }) {
   function selectHandler(value) {
     setInput(value);
     setShow(false);
+    setItems(value);
   }
 
   return (

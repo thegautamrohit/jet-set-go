@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./FormFilter.module.scss";
 import Select from "../common/Select/Select";
-import { getDropDownData } from "../../Utils/index";
+import { getDropDownData, displayFlights } from "../../Utils/index";
 import Card from "../common/Card/Card";
 
 function FormFilter({ flightData }) {
@@ -14,16 +14,29 @@ function FormFilter({ flightData }) {
   const [destinationCity, setDestinationCity] = useState();
   const [airlines, setAirlines] = useState();
   const [sortOrder, setSortOrder] = useState("");
-  console.log(sourceCityData, destinationCityData, airlinesData, sortData);
+  const [flightsToShow, setFlightsToShow] = useState([]);
 
   const flightDataHandler = () => {
-    let arr = [];
-
-    for (let i = 0; i < flightData.length; i++) {
-      const el = flightData[i];
-      // if (el?.displayData?.)
+    if (sourceCity === destinationCity) {
+      console.log(sourceCity, destinationCity);
+      window.alert("Arrival and departure can't be same");
+      return;
     }
+
+    const finalRes = displayFlights(
+      flightData,
+      sourceCity,
+      destinationCity,
+      airlines,
+      sortOrder
+    );
+
+    console.log(finalRes);
+
+    setFlightsToShow([...finalRes]);
   };
+
+  console.log(flightsToShow);
 
   return (
     <>
@@ -69,12 +82,14 @@ function FormFilter({ flightData }) {
 
         <div className={styles.form__bottom}>
           <div className={styles.btn__wrapper}>
-            <button>Search</button>
+            <button onClick={() => flightDataHandler()}>Search</button>
           </div>
         </div>
       </div>
 
-      <Card />
+      {flightsToShow?.map((item, index) => (
+        <Card data={item} key={index} />
+      ))}
     </>
   );
 }

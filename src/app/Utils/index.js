@@ -29,3 +29,31 @@ export const getDropDownData = (flightData) => {
 
   return res;
 };
+
+export const displayFlights = (
+  flightData,
+  sourceCity,
+  destinationCity,
+  airlines,
+  sortOrder
+) => {
+  let res = [];
+  for (let i = 0; i < flightData.length; i++) {
+    const el = flightData[i];
+
+    if (
+      el?.displayData?.source?.airport?.cityName === sourceCity &&
+      el?.displayData?.destination?.airport?.cityName === destinationCity
+    ) {
+      res.push(el);
+    }
+  }
+
+  if (airlines) {
+    res = res.filter(
+      (el) => el?.displayData?.airlines[0]?.airlineName === airlines
+    );
+  }
+
+  return res;
+};
