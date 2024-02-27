@@ -33,7 +33,7 @@ function Card() {
           cityName: "Mumbai",
           terminal: "2",
           airportCode: "BOM",
-          airportName: "Mumbai",
+          airportName: "Mumbai Airport",
           countryCode: "IN",
           countryName: "India",
         },
