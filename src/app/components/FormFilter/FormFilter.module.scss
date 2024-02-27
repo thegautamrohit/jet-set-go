@@ -11,11 +11,16 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   background-color: var(--component-bg);
 
+  .form__top,
+  .form__middle,
+  .form__bottom {
+    @include displayFlex(row, center, center, 0rem);
+  }
+
   .left__wrapper,
   .mono__wrapper {
     @include displayFlex(row, center, flex-start, 0rem);
     height: 100%;
-    // width: max-content;
     position: relative;
     padding: 0 2rem 0 0;
   }
@@ -38,6 +43,39 @@
       border: 0px;
       font-size: var(--text-lg);
       border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .form__filter__wrapper {
+    @include displayFlex(column, center, space-between, 2rem);
+    .left__wrapper,
+    .mono__wrapper {
+      position: relative;
+      padding: 0 1rem 0 0;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form__filter__wrapper {
+    padding: 1rem 2rem;
+    gap: 1rem;
+
+    .form__top,
+    .form__middle,
+    .form__bottom {
+      width: 100%;
+    }
+
+    .left__wrapper,
+    .mono__wrapper {
+      @include displayFlex(column, center, flex-start, 1rem);
+      height: 100%;
+      position: relative;
+      padding: 0;
+      width: 100%;
     }
   }
 }

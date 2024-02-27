@@ -18,7 +18,7 @@ async function Page() {
   return (
     <div>
       <FormFilter flightData={flightData} />
-      <Card />
+      {/* <Card /> */}
     </div>
   );
 }

@@ -8,12 +8,36 @@
   h1 {
     font-size: var(--text-4xl);
     line-height: 1.8;
-    background-color: var(--nav-bg);
   }
 
   p {
     font-size: var(--text-2xl);
-    background-color: var(--nav-bg);
   }
   background-color: var(--nav-bg);
+}
+
+@media screen and (max-width: 1366px) {
+  .navbar__wrapper {
+    padding: 1.5rem 3rem;
+    h1 {
+      font-size: var(--text-2xl);
+    }
+
+    p {
+      font-size: var(--text-lg);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__wrapper {
+    padding: 1rem 2rem;
+    h1 {
+      font-size: var(--text-2xl);
+    }
+
+    p {
+      font-size: var(--text-lg);
+    }
+  }
 }
