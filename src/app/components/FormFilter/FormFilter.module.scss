@@ -1,29 +1,43 @@
 @import "../../../../mixins";
 
 .form__filter__wrapper {
+  @include displayFlex(row, center, space-between, 2rem);
   border: 1px solid #f5f5f5;
-  padding: 2rem;
+  padding: 2rem 4rem;
   width: 90%;
   height: 100%;
   margin: 2rem auto;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  @include displayFlex(row, end, flex-start, 2rem);
   background-color: var(--component-bg);
 
   .left__wrapper,
-  .right__wrapper {
+  .mono__wrapper {
     @include displayFlex(row, center, flex-start, 0rem);
     height: 100%;
-    width: 100%;
+    // width: max-content;
     position: relative;
+    padding: 0 2rem 0 0;
   }
 
-  .left__wrapper {
-    border-right: 1px solid #ccc;
+  .seperation {
+    height: 70px;
+    display: flex;
+    width: 2px;
+    background-color: #cdcdcd;
   }
 
-  .filter__div {
-    @include displayFlex(column, center, flex-start, 2rem);
+  .btn__wrapper {
+    @include displayFlex(row, center, center, unset);
+    height: 100%;
+    button {
+      padding: 0.5rem 1rem;
+      color: #fff;
+      background-color: var(--nav-bg);
+      cursor: pointer;
+      border: 0px;
+      font-size: var(--text-lg);
+      border-radius: 10px;
+    }
   }
 }

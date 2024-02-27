@@ -1,17 +1,15 @@
 import React from "react";
 import styles from "./Select.module.scss";
-import { MdFlight } from "react-icons/md";
 
-function Select({ label, type, items }) {
-  console.log(type);
+function Select({ label, items, borderRadius }) {
   return (
-    <div
-      className={`${styles.select__tag__wrapper} ${
-        type === 1 ? styles.type__one__select : styles.type__two__select
-      }`}
-    >
+    <div className={styles.select__tag__wrapper}>
       {label ? <label> {label} </label> : null}
-      <input type="text" placeholder="From" />
+      <input
+        type="text"
+        placeholder={label}
+        style={{ borderRadius: borderRadius }}
+      />
       {/* <div className={styles.drop_down_wrapper}>
         <ul>
           <li>

@@ -4,25 +4,31 @@ import styles from "./FormFilter.module.scss";
 import Select from "../common/Select/Select";
 
 function FormFilter({ flightData }) {
-  //   console.log(flightData);
-
   return (
     <div className={styles.form__filter__wrapper}>
       <div className={styles.left__wrapper}>
-        <Select label={"From"} type={1} />
-        <Select label={"To"} type={2} />
+        <Select label={"From"} type={1} borderRadius="10px 0px 0px 10px" />
+        <Select label={"To"} type={2} borderRadius="0px 10px 10px 0px" />
       </div>
 
-      <div className={styles.right__wrapper}>
+      <div className={styles.seperation}></div>
+
+      <div className={styles.mono__wrapper}>
         <div className={styles.filter__div}>
-          <Select label={"Filter By"} type={1} />
+          <Select label={"Filter By Airlines"} />
         </div>
       </div>
-      <div className={styles.filter__div}>
-        <Select label={"Sort By"} type={2} />
-      </div>
 
-      <button>Search</button>
+      <div className={styles.seperation}></div>
+
+      <div className={styles.mono__wrapper}>
+        <Select label={"Sort By"} />
+      </div>
+      <div className={styles.seperation}></div>
+
+      <div className={styles.btn__wrapper}>
+        <button>Search</button>
+      </div>
     </div>
   );
 }
