@@ -31,12 +31,8 @@ function FormFilter({ flightData }) {
       sortOrder
     );
 
-    console.log(finalRes);
-
     setFlightsToShow([...finalRes]);
   };
-
-  console.log(flightsToShow);
 
   return (
     <>

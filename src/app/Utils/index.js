@@ -30,6 +30,16 @@ export const getDropDownData = (flightData) => {
   return res;
 };
 
+const sortFlights = (data, order) => {
+  if (order === "Low to high") {
+    return data.sort((a, b) => a.price - b.price);
+  }
+
+  if (order === "High to low") {
+    return data.sort((a, b) => b.price - a.price);
+  }
+};
+
 export const displayFlights = (
   flightData,
   sourceCity,
@@ -53,6 +63,10 @@ export const displayFlights = (
     res = res.filter(
       (el) => el?.displayData?.airlines[0]?.airlineName === airlines
     );
+  }
+
+  if (sortOrder) {
+    res = sortFlights(res, sortOrder);
   }
 
   return res;
