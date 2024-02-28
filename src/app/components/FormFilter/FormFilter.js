@@ -83,9 +83,11 @@ function FormFilter({ flightData }) {
         </div>
       </div>
 
-      {flightsToShow?.map((item, index) => (
-        <Card data={item} key={index} />
-      ))}
+      <div className={styles.card__wrapper}>
+        {flightsToShow?.map((item, index) => (
+          <Card data={item} key={index} />
+        ))}
+      </div>
     </>
   );
 }
