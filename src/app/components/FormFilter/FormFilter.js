@@ -17,9 +17,9 @@ function FormFilter({ flightData }) {
   const [flightsToShow, setFlightsToShow] = useState();
 
   const flightDataHandler = () => {
-    if (sourceCity === destinationCity) {
+    if (sourceCity === destinationCity && !sourceCity && !destinationCity) {
       console.log(sourceCity, destinationCity);
-      window.alert("Arrival and departure can't be same");
+      window.alert("Please enter valid city");
       return;
     }
 
