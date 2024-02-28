@@ -36,7 +36,7 @@ function FormFilter({ flightData }) {
 
   return (
     <>
-      <div className={styles.form__filter__wrapper}>
+      <div className={styles.form__filter__wrapper} id="form__filter__wrapper">
         <div className={styles.form__top}>
           <div className={styles.left__wrapper}>
             <Select
@@ -69,7 +69,7 @@ function FormFilter({ flightData }) {
               <Select
                 label={"Sort By"}
                 borderRadius="0px 10px 10px 0px"
-                item={sortData}
+                items={sortData}
                 setItems={setSortOrder}
               />
             </div>

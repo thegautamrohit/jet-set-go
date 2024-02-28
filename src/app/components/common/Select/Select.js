@@ -10,9 +10,8 @@ function Select({ label, items, borderRadius, setItems }) {
 
   function inputHandler(e) {
     setInput(e.target.value);
-    if (e.target.value.length > 3) {
-      setShow(true);
-    }
+
+    setShow(true);
   }
 
   function selectHandler(value) {
@@ -35,9 +34,6 @@ function Select({ label, items, borderRadius, setItems }) {
             setShow(true);
           }
         }}
-        // onBlur={() => {
-        //   setShow(false);
-        // }}
       />
       {show && (
         <div className={styles.drop_down_wrapper}>
