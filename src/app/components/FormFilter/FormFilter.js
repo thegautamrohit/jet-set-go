@@ -4,6 +4,7 @@ import styles from "./FormFilter.module.scss";
 import Select from "../common/Select/Select";
 import { getDropDownData, displayFlights } from "../../Utils/index";
 import Card from "../common/Card/Card";
+import { IoSearchSharp } from "react-icons/io5";
 
 function FormFilter({ flightData }) {
   const { sourceCityData, destinationCityData, airlinesData } =
@@ -78,7 +79,9 @@ function FormFilter({ flightData }) {
 
         <div className={styles.form__bottom}>
           <div className={styles.btn__wrapper}>
-            <button onClick={() => flightDataHandler()}>Search</button>
+            <button onClick={() => flightDataHandler()}>
+              Search <IoSearchSharp color="#fff" size={18} />
+            </button>
           </div>
         </div>
       </div>

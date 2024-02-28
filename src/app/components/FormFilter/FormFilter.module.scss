@@ -33,9 +33,9 @@
   }
 
   .btn__wrapper {
-    @include displayFlex(row, center, center, unset);
     height: 100%;
     button {
+      @include displayFlex(row, center, space-between, 5px);
       padding: 0.5rem 1rem;
       color: #fff;
       background-color: var(--nav-bg);
