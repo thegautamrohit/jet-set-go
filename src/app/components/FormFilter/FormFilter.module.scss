@@ -51,6 +51,13 @@
   @include displayFlex(column, center, center, 2rem);
 }
 
+.empty__card {
+  @include displayFlex(row, center, center, 0rem);
+  padding: 2rem;
+  // background-color: #fff;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 1366px) {
   .form__filter__wrapper {
     @include displayFlex(column, center, space-between, 2rem);

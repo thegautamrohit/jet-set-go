@@ -14,7 +14,7 @@ function FormFilter({ flightData }) {
   const [destinationCity, setDestinationCity] = useState();
   const [airlines, setAirlines] = useState();
   const [sortOrder, setSortOrder] = useState("");
-  const [flightsToShow, setFlightsToShow] = useState([]);
+  const [flightsToShow, setFlightsToShow] = useState();
 
   const flightDataHandler = () => {
     if (sourceCity === destinationCity) {
@@ -87,6 +87,12 @@ function FormFilter({ flightData }) {
         {flightsToShow?.map((item, index) => (
           <Card data={item} key={index} />
         ))}
+
+        {flightsToShow?.length === 0 && (
+          <div className={styles.empty__card}>
+            <p>No Flights Available</p>
+          </div>
+        )}
       </div>
     </>
   );
