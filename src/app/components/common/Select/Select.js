@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import { MdFlight } from "react-icons/md";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 function Select({ label, items, borderRadius, setItems }) {
   const [input, setInput] = useState("");
@@ -37,6 +38,9 @@ function Select({ label, items, borderRadius, setItems }) {
       />
       {show && (
         <div className={styles.drop_down_wrapper}>
+          <span onClick={() => setShow(false)}>
+            <IoCloseCircleSharp color="#888" size={22} />
+          </span>
           <ul>
             {items?.map((el, idx) => (
               <li key={idx} onClick={() => selectHandler(el)}>

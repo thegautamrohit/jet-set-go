@@ -26,9 +26,19 @@
     z-index: 10;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+
+    span {
+      position: absolute;
+      top: 0%;
+      right: 0;
+      z-index: 10;
+      cursor: pointer;
+    }
+
     ul {
       li {
         list-style: none;
+        cursor: pointer;
       }
     }
 
@@ -37,7 +47,7 @@
     padding: 1rem;
 
     &::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
 
     /* Track */
