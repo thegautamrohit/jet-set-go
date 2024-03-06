@@ -2,14 +2,13 @@
 
 import React from "react";
 import FormFilter from "./components/FormFilter/FormFilter";
-import Card from "../app/components/common/Card/Card";
 
 async function getData() {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}`);
     const data = await response.json();
     return data.data.result;
-  } catch (error) {
+  } catch (error: any) {
     window.alert(error.message);
   }
 }
